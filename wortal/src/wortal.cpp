@@ -84,8 +84,8 @@ void Wortal::OnResume(const int success)
     lua_State *L = onResumeListener.m_L;
     int top = lua_gettop(L);
 
-    lua_pushListener(L, onResumeListener);
-    lua_pushBoolean(L, success);
+    lua_pushlistener(L, onResumeListener);
+    lua_pushboolean(L, success);
 
     int ret = lua_pcall(L, 2, 0, 0);
     if (ret != 0)
