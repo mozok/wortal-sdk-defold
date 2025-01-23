@@ -18,3 +18,4 @@ builtins
 ## JetBrains
 .idea/
 *.iml
+/.editor_settings
