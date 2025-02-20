@@ -40,11 +40,11 @@ var WortalSession = {
         window.Wortal.session.getEntryPointAsync()
             .then(entryPoint =>
             {
-                { { { makeDynCall("vii", "callback") } } } (Utils.allocateString(entryPoint), 0);
+                {{{ makeDynCall("vii", "callback") }}} (Utils.allocateString(entryPoint), 0);
             })
             .catch(error =>
             {
-                { { { makeDynCall("vii", "callback") } } } (0, Utils.allocateString(JSON.stringify(error)));
+                {{{ makeDynCall("vii", "callback") }}} (0, Utils.allocateString(JSON.stringify(error)));
             });
     },
 
@@ -67,7 +67,7 @@ var WortalSession = {
     {
         window.Wortal.session.onOrientationChange(orientation =>
         {
-            { { { makeDynCall("vi", "callback") } } } (Utils.allocateString(orientation));
+            {{{ makeDynCall("vi", "callback") }}} (Utils.allocateString(orientation));
         });
     },
 
@@ -76,11 +76,11 @@ var WortalSession = {
         window.Wortal.session.switchGameAsync(gameId)
             .then(() =>
             {
-                { { { makeDynCall("vii", "callback") } } } (0, 0);
+                {{{ makeDynCall("vii", "callback") }}} (0, 0);
             })
             .catch(error =>
             {
-                { { { makeDynCall("vii", "callback") } } } (Utils.allocateString(JSON.stringify(error)), 0);
+                {{{ makeDynCall("vii", "callback") }}} (Utils.allocateString(JSON.stringify(error)), 0);
             });
     },
 
@@ -93,7 +93,7 @@ var WortalSession = {
     {
         window.Wortal.session.onAudioStatusChange(isAudioEnabled =>
         {
-            { { { makeDynCall("vi", "callback") } } } (isAudioEnabled);
+            {{{ makeDynCall("vi", "callback") }}} (isAudioEnabled);
         })
     }
 
