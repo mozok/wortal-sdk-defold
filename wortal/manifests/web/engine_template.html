@@ -6,16 +6,34 @@
 <body>
     <script>
         if (Wortal) {
+            // Copied from https://github.com/defold/extension-poki-sdk/blob/main/poki-sdk/manifests/web/engine_template.html
+            var isWasmLoaded = false;
+            var isWortalSDKInited = false;
+            var runFunc = function () {
+                if (isWortalSDKInited && isWasmLoaded) {
+                    Module.runApp("canvas");
+                }
+            }
+            Module['onRuntimeInitialized'] = function () {
+                isWasmLoaded = true;
+                runFunc();
+            };
+
             // This should be called as soon as possible as the SDK cannot be used until it's finished initializing.
             Wortal.initializeAsync().then(() => {
                 // SDK ready to use, you can start the game now. If your game is still loading assets then you can
                 // comment out the startGameAsync call and call it when your game is ready.
+
+                isWortalSDKInited = true;
+                runFunc();
                 Wortal.startGameAsync().then(() => {
                     // Game ready to play, player is shown the game.
                 }).catch(err => {
                     console.error(err);
                 });
             }).catch(err => {
+                isWortalSDKInited = true;
+                runFunc();
                 console.error(err);
             });
         } else {
