@@ -298,6 +298,8 @@ static const luaL_reg Module_methods[] = {
     {"session_get_orientation", WortalSession::GetOrientation},
     {"session_on_orientation_change", WortalSession::OnOrientationChange},
     {"session_switch_game", WortalSession::SwitchGameAsync},
+    {"session_gameplay_start", WortalSession::GameplayStart},
+    {"session_gameplay_stop", WortalSession::GameplayStop},
 
     {"stats_get_stats", WortalStats::GetStatsAsync},
     {"stats_post_stats", WortalStats::PostStatsAsync},

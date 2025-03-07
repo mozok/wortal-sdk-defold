@@ -7,6 +7,12 @@ local popup = require "examples.apis.popup.popup"
 
 function init(self)
 	msg.post(".", "acquire_input_focus")
+
+	wortal.session_gameplay_start()
+end
+
+function final(self)
+	wortal.session_gameplay_stop()
 end
 
 function on_message(self, message_id, message, sender)
