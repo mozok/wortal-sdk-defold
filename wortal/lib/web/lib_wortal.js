@@ -6,12 +6,12 @@ var WortalLib = {
 
         onPauseCallback: function ()
         {
-            { { { makeDynCall("vi", "Utils._onPauseCallbackPtr") } } } (1);
+            {{{ makeDynCall("vi", "Utils._onPauseCallbackPtr") }}} (1);
         },
 
         onResumCallback: function ()
         {
-            { { { makeDynCall("vi", "Utils._onResumeCallbackPtr") } } } (1);
+            {{{ makeDynCall("vi", "Utils._onResumeCallbackPtr") }}} (1);
         },
 
         allocateString: function (str)
@@ -35,11 +35,11 @@ var WortalLib = {
         window.Wortal.initializeAsync()
             .then(() =>
             {
-                { { { makeDynCall("vii", "callback") } } } (1, 0);
+                {{{ makeDynCall("vii", "callback") }}} (1, 0);
             })
             .catch(error =>
             {
-                { { { makeDynCall("vii", "callback") } } } (0, Utils.allocateString(JSON.stringify(error)));
+                {{{ makeDynCall("vii", "callback") }}} (0, Utils.allocateString(JSON.stringify(error)));
             });
     },
 
@@ -48,11 +48,11 @@ var WortalLib = {
         window.Wortal.startGameAsync()
             .then(() =>
             {
-                { { { makeDynCall("vii", "callback") } } } (1, 0);
+                {{{ makeDynCall("vii", "callback") }}} (1, 0);
             })
             .catch(error =>
             {
-                { { { makeDynCall("vii", "callback") } } } (0, Utils.allocateString(JSON.stringify(error)));
+                {{{ makeDynCall("vii", "callback") }}} (0, Utils.allocateString(JSON.stringify(error)));
             });
     },
 
@@ -80,11 +80,11 @@ var WortalLib = {
         window.Wortal.performHapticFeedbackAsync()
             .then(() =>
             {
-                { { { makeDynCall("vii", "callback") } } } (1, 0);
+                {{{ makeDynCall("vii", "callback") }}} (1, 0);
             })
             .catch(error =>
             {
-                { { { makeDynCall("vii", "callback") } } } (0, Utils.allocateString(JSON.stringify(error)));
+                {{{ makeDynCall("vii", "callback") }}} (0, Utils.allocateString(JSON.stringify(error)));
             });
     },
 

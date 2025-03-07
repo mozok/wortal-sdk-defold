@@ -1,5 +1,6 @@
 #include "wortal_session.h"
 #include "luautils.h"
+#include <dmsdk/dlib/log.h>
 
 #if defined(DM_PLATFORM_HTML5)
 
@@ -107,7 +108,7 @@ void WortalSession::OnAudioStatusChange(const bool *isAudioEnabled)
     {
         // just for debugging purpose.
         const char *error = lua_tostring(L, -1);
-        std::cerr << "Lua error in OnAudioStatusChange : " << error << std::endl;
+        dmLogError("Lua error in OnAudioStatusChange : %s", error)
 
         lua_pop(L, 1);
     }

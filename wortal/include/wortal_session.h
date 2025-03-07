@@ -26,6 +26,7 @@ public:
     static int OnOrientationChange(lua_State *L);
     static int SwitchGameAsync(lua_State *L);
     static int IsAudioEnabled(lua_State *L);
+    static int OnAudioStatusChange(lua_State *L);
 
 private:
     static void OnGetEntryPoint(const char *entryPoint, const char *error);
